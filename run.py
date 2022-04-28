@@ -43,11 +43,6 @@ class Logs(db.Model):
 
 db.create_all()
 
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/create -H 'Content-Type: application/json' -d '{"username": "19090006", "password": "123"}'
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/create -H 'Content-Type: application/json' -d '{"username": "19090034", "password": "123"}'
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/create -H 'Content-Type: application/json' -d '{"username": "19090092", "password": "123"}'
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/create -H 'Content-Type: application/json' -d '{"username": "19090126", "password": "123"}'
-
 @app.route("/api/v1/users/create", methods=["POST"])
 def create_user():
     username = request.json['username']
@@ -63,11 +58,6 @@ def create_user():
         'password' : password,
         'status': 200 
         })
-
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/login -H 'Content-Type: application/json' -d '{"username": "19090006", "password": "123"}'
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/login -H 'Content-Type: application/json' -d '{"username": "19090034", "password": "123"}'
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/login -H 'Content-Type: application/json' -d '{"username": "19090092", "password": "123"}'
-#curl -i -X POST http://127.0.0.1:9200/api/v1/users/login -H 'Content-Type: application/json' -d '{"username": "19090126", "password": "123"}'
 
 @app.route("/api/v1/users/login", methods=["POST"])
 def login():
